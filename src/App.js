@@ -3,6 +3,7 @@ import './App.css';
 import NavBar from './components/navbar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import Counter from './components/Counter/Counter';
+import Test1 from './components/test1/test1';
 
 
 function App() {
