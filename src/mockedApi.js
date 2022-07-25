@@ -23,53 +23,53 @@ const catalog = [
         price: 39990, 
         category: 'indumentaria', 
         img:'https://http2.mlstatic.com/D_NQ_NP_2X_866515-MLA50357672158_062022-F.webp', 
-        stock: 33, 
+        stock: 8, 
         description:'Campera de motociclista, BS1, modelo MAN'
     },
     { 
         id: '4', 
-        name: 'otas Moto Solco Drift Viaje Ruta Motoscba', 
+        name: 'Botas Moto Solco Drift Viaje Ruta Motoscba', 
         price: 16479, 
         category: 'calzado', 
         img:'https://http2.mlstatic.com/D_NQ_NP_2X_794214-MLA32573081791_102019-F.webp', 
-        stock: 11, 
+        stock: 3, 
         description:'BOTA SOLCO DRIFT.LA MEJOR BOTA DEL MERCADO ARGENTINO. MOTOCICLISMO DE VIAJE Y URBANO'
     },
     { 
-        id: '3', 
-        name: 'Campera Moto Bs1 Impermeable Protecciones Touring Pista Ruta', 
-        price: 39990, 
-        category: 'indumentaria', 
-        img:'https://http2.mlstatic.com/D_NQ_NP_2X_866515-MLA50357672158_062022-F.webp', 
-        stock: 33, 
-        description:'Campera de motociclista, BS1, modelo MAN'
+        id: '5', 
+        name: 'Botas Touring Impermeables Hifly Premiun Pvc Lluvia Wagner ', 
+        price: 1750, 
+        category: 'calzado', 
+        img:'https://http2.mlstatic.com/D_NQ_NP_2X_657043-MLA40975219511_032020-F.webp', 
+        stock: 10, 
+        description:'Botas PVC Touring Hifly'
     },
     { 
-        id: '3', 
-        name: 'Campera Moto Bs1 Impermeable Protecciones Touring Pista Ruta', 
-        price: 39990, 
+        id: '6', 
+        name: 'Campera De Cuero Moto Race - Hombre Cuero 1 Mm', 
+        price: 27900, 
         category: 'indumentaria', 
-        img:'https://http2.mlstatic.com/D_NQ_NP_2X_866515-MLA50357672158_062022-F.webp', 
-        stock: 33, 
-        description:'Campera de motociclista, BS1, modelo MAN'
+        img:'https://http2.mlstatic.com/D_NQ_NP_2X_726868-MLA29713061742_032019-F.webp', 
+        stock: 13, 
+        description:'Excelente chaqueta de de primera calidad!! CUERO AUTÉNTICO!!!'
     },
     { 
-        id: '3', 
-        name: 'Campera Moto Bs1 Impermeable Protecciones Touring Pista Ruta', 
-        price: 39990, 
-        category: 'indumentaria', 
-        img:'https://http2.mlstatic.com/D_NQ_NP_2X_866515-MLA50357672158_062022-F.webp', 
-        stock: 33, 
-        description:'Campera de motociclista, BS1, modelo MAN'
+        id: '7', 
+        name: 'Mochila Para Moto Circuit, Rígida Con Correa Porta Casco', 
+        price: 13699, 
+        category: 'accesorios', 
+        img:'https://http2.mlstatic.com/D_NQ_NP_2X_952251-MLA47992878231_102021-F.webp', 
+        stock: 8, 
+        description:'Mochila para moto Circuit, rígida con correa porta casco'
     },
     { 
-        id: '3', 
-        name: 'Campera Moto Bs1 Impermeable Protecciones Touring Pista Ruta', 
-        price: 39990, 
-        category: 'indumentaria', 
-        img:'https://http2.mlstatic.com/D_NQ_NP_2X_866515-MLA50357672158_062022-F.webp', 
-        stock: 33, 
-        description:'Campera de motociclista, BS1, modelo MAN'
+        id: '8', 
+        name: 'Traba Discos Bulit De 5.5mm Con Funda', 
+        price: 3999, 
+        category: 'accesorios', 
+        img:'https://http2.mlstatic.com/D_NQ_NP_2X_930383-MLA32083314504_092019-F.webp', 
+        stock: 12, 
+        description:'Ideal para motos con diámetro del agujero en el disco de freno menor a 10mm'
     }
 ]
 
