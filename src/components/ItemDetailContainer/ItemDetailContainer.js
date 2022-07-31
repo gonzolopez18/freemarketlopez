@@ -6,7 +6,7 @@ const ItemDetailContainer = () => {
     const [product, setProduct] = useState();
 
     useEffect(() => {
-        getCatalogFromApiById('2')
+        getCatalogFromApiById('6')
             .then( product => {
                 console.log(product);
                 setProduct(product)})
