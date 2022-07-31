@@ -20,7 +20,7 @@ const Counter = ({stock, onAdd}) => {
 
 
     return (
-        <div className="container-md">
+        <div className="container-md counter">
             <div className="row justify-content-center">
                 <div className="col-2">
                     <button className="btn btn-light" onClick={decrement}>-</button>

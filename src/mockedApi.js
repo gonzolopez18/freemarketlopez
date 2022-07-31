@@ -80,3 +80,10 @@ export const getCatalogFromApi = () => {
         }, 2000)
     })
 }
+export const getCatalogFromApiById = (id) => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(catalog.find(prod => prod.id === id))
+        }, 2000)
+    })
+}

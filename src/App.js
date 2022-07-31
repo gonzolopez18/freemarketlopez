@@ -3,6 +3,7 @@ import './App.css';
 import NavBar from './components/navbar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import Counter from './components/Counter/Counter';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
 
@@ -13,8 +14,11 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <ItemListContainer message="Bienvenidos" />
-      <Counter stock={10} onAdd={handleOnAdd}></Counter>
+      <div className="container">
+          <ItemListContainer message="Bienvenidos" />
+          <ItemDetailContainer />
+          <Counter stock={10} onAdd={handleOnAdd}></Counter>
+      </div>
     </div>
   );
 }
