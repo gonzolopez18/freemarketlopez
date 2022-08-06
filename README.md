@@ -36,7 +36,7 @@ Dentro de la aplicación, encontrarán las siguientes rutas:
 
 ### Navegación
 
-![Navegación](https://github.com/gonzolopez18/freemarketlopez/blob/desafios/pre-entrega/public/navegacion.gif)
+![Navegación](https://github.com/gonzolopez18/freemarketlopez/blob/develop/public/navegacion.gif)
 
 
 Saludos!
