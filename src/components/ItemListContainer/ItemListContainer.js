@@ -1,18 +1,21 @@
 import { useState, useEffect} from 'react';
 import './ItemListContainer.css';
 import ItemList from '../../components/ItemList/ItemList';
-import { getCatalogFromApi } from '../../mockedApi';
-
+import { getCatalogFromApi, getCatalogFromApiByCategory } from '../../mockedApi';
+import { useParams } from 'react-router-dom';
 
 
 const ItemListContainer = ( {message}) => {
     const [catalog, setCatalog] = useState([]);
 
+    const { category } = useParams();
+
     useEffect(() => {
-            getCatalogFromApi().then((catalog) =>
+        const getCatalog = category ? getCatalogFromApiByCategory : getCatalogFromApi;
+        getCatalog(category).then((catalog) =>
                 setCatalog(catalog))
         }
-    , []);
+    , [category]);
 
     return (
             <div className="h-100 p-5 text-bg-light rounded-3" >

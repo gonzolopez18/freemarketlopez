@@ -2,23 +2,26 @@ import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/navbar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import Counter from './components/Counter/Counter';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 
 function App() {
 
   const handleOnAdd = (qty) => {
-    console.log(`se agregarán ${qty} unidades del producto al carro`);
+    console.log(`Se agregarán ${qty} unidades del producto al carro`);
   }
 
   return (
-    <div className="App">
-      <NavBar />
-      <div className="container">
-          <ItemListContainer message="Bienvenidos" />
-          <ItemDetailContainer />
-          <Counter stock={10} onAdd={handleOnAdd}></Counter>
-      </div>
+    <div className="App container">
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<ItemListContainer message="Bienvenidos" />} /> 
+          <Route path="/category/:category" element={<ItemListContainer message="Listado por categoría" />} /> 
+          <Route path='/details/:productId' element={<ItemDetailContainer message="Detalle" onAddHandler={handleOnAdd} />} />
+        </Routes>  
+      </BrowserRouter>
     </div>
   );
 }

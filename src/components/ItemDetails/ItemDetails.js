@@ -1,7 +1,10 @@
 import Counter from "../Counter/Counter";
 import './ItemDetails.css';
 
-const ItemDetails = ( {id, name, description, price, img}) => {
+const ItemDetails = ( {product, stock , onAddHandler}) => {
+    //const  {product , onAddHandler} = props;
+    const {id, name, description, price, img} = product;
+
     return (
         <div className="container  pt-5">
             <div className="row">
@@ -24,7 +27,7 @@ const ItemDetails = ( {id, name, description, price, img}) => {
                             </div>
                         </div>
                         <h3 className="text-center m-5">${price}</h3>
-                        <Counter></Counter>
+                        <Counter stock={ stock } onAddHandler={onAddHandler}></Counter>
                     </div>
                 </div>
             </div>
