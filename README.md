@@ -34,5 +34,9 @@ Dentro de la aplicación, encontrarán las siguientes rutas:
 - /category/:category - muestra ItemListContainer filtrando productos por la categoria elegida
 - /item/:productId - muestra ItemDetailContainer con el detalle del producto elegido
 
+### Navegación
+
+![Navegación](https://github.com/gonzolopez18/freemarketlopez/blob/develop/public/navegacion.gif)
+
 
 Saludos!
