@@ -19,7 +19,8 @@ function App() {
         <Routes>
           <Route path="/" element={<ItemListContainer message="Bienvenidos" />} /> 
           <Route path="/category/:category" element={<ItemListContainer message="Listado por categoría" />} /> 
-          <Route path='/details/:productId' element={<ItemDetailContainer message="Detalle" onAddHandler={handleOnAdd} />} />
+          <Route path='/item/:productId' element={<ItemDetailContainer message="Detalle" onAddHandler={handleOnAdd} />} />
+          <Route path='*' element={<h1>Page not Found</h1>} />
         </Routes>  
       </BrowserRouter>
     </div>
