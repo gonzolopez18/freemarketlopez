@@ -3,9 +3,11 @@ import './Counter.css';
 import { useState } from 'react';
 
 
-const Counter = ({stock, onAdd}) => {
-    const [count, setCount] = useState(0);
-
+const Counter = ({stock, onAddHandler }) => {
+    const [count, setCount] = useState(1);
+    const handleOnAdd = (qty) => {
+        console.log(`se agregarán ${qty} unidades del producto al carro`);
+      }
     const increment = () => {
         if (count < stock) {
             setCount(count + 1)
@@ -32,7 +34,7 @@ const Counter = ({stock, onAdd}) => {
                     <button className="btn btn-light" onClick={increment}>+</button>
                 </div>
             </div>
-            <button className="btn btn-dark" onClick={() => onAdd(count)}>Add to Cart</button>
+            <button className="btn btn-dark" onClick={() => onAddHandler(count)}>Add to Cart</button>
 
         </div>
         );
