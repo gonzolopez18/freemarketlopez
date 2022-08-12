@@ -5,9 +5,7 @@ import { useState } from 'react';
 
 const Counter = ({stock, onAddHandler }) => {
     const [count, setCount] = useState(1);
-    const handleOnAdd = (qty) => {
-        console.log(`se agregarán ${qty} unidades del producto al carro`);
-      }
+    
     const increment = () => {
         if (count < stock) {
             setCount(count + 1)
@@ -19,7 +17,6 @@ const Counter = ({stock, onAddHandler }) => {
             setCount(count - 1)
         }
     }
-
 
     return (
         <div className="container-md counter">

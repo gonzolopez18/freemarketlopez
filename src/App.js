@@ -8,9 +8,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
 
-  const handleOnAdd = (qty) => {
-    console.log(`Se agregarán ${qty} unidades del producto al carro`);
-  }
 
   return (
     <div className="App container">
@@ -19,7 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<ItemListContainer message="Bienvenidos" />} /> 
           <Route path="/category/:category" element={<ItemListContainer message="Listado por categoría" />} /> 
-          <Route path='/item/:productId' element={<ItemDetailContainer message="Detalle" onAddHandler={handleOnAdd} />} />
+          <Route path='/item/:productId' element={<ItemDetailContainer message="Detalle" />} />
           <Route path='*' element={<h1>Page not Found</h1>} />
         </Routes>  
       </BrowserRouter>

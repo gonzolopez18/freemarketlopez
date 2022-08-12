@@ -3,7 +3,7 @@ import { getCatalogFromApiById } from "../../mockedApi";
 import ItemDetails from "../ItemDetails/ItemDetails";
 import { useParams } from 'react-router-dom';
 
-const ItemDetailContainer = ( {message, onAddHandler }) => {
+const ItemDetailContainer = ( {message }) => {
     const [product, setProduct] = useState([]);
     const { productId} = useParams();
  
@@ -14,7 +14,7 @@ const ItemDetailContainer = ( {message, onAddHandler }) => {
     }, [productId]);
 
    return (
-        <ItemDetails product={ product } stock={ 5} onAddHandler={onAddHandler}/>
+        <ItemDetails product={ product } stock={ 5 } />
     );
 }
 
