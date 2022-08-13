@@ -1,10 +1,17 @@
 import Counter from "../Counter/Counter";
 import './ItemDetails.css';
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
-const ItemDetails = ( {product, stock , onAddHandler}) => {
-    //const  {product , onAddHandler} = props;
+const ItemDetails = ( {product, stock }) => {
+    const [quantity, setQuantity ] = useState(0);
     const {id, name, description, price, img} = product;
 
+    const handleOnAdd = (qty) => {
+        console.log(`se agregarán ${qty} de ${name} al carrito`);
+        setQuantity(qty);
+    }
+    
     return (
         <div className="container  pt-5">
             <div className="row">
@@ -27,7 +34,13 @@ const ItemDetails = ( {product, stock , onAddHandler}) => {
                             </div>
                         </div>
                         <h3 className="text-center m-5">${price}</h3>
-                        <Counter stock={ stock } onAddHandler={onAddHandler}></Counter>
+                        {quantity === 0 ? (
+                                <Counter stock={ stock } onAddHandler={handleOnAdd}></Counter>
+                            ) : (
+                                <Link to='/cart'>Finalizar combra</Link>
+                            ) 
+                        }
+                        
                     </div>
                 </div>
             </div>
