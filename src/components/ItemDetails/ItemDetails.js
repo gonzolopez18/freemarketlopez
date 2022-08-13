@@ -8,10 +8,8 @@ const ItemDetails = ( {product, stock }) => {
     const {id, name, description, price, img} = product;
 
     const handleOnAdd = (qty) => {
-        console.log(qty);
+        console.log(`se agregarán ${qty} de ${name} al carrito`);
         setQuantity(qty);
-        console.log(quantity);
-        console.log(`Se agregarán ${quantity} unidades del producto al carrito`);
     }
     
     return (
