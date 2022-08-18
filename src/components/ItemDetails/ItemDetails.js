@@ -12,7 +12,7 @@ const ItemDetails = ( {id, name, description, price, img, stock }) => {
 
     const handleOnAdd = (qty) => {
         setQuantity(qty);
-        const productToAdd = { id, name, price, qty};
+        const productToAdd = { id, name, price, img, qty};
         addToCartInfo(productToAdd);
     }
     
