@@ -1,20 +1,21 @@
-import React from 'react';
 import './Counter.css';
 import { useState } from 'react';
 
 
-const Counter = ({stock, onAddHandler }) => {
-    const [count, setCount] = useState(1);
-    
-    const increment = () => {
-        if (count < stock) {
-            setCount(count + 1)
+const Counter = ({stock = 0, initialCount = 1, onAddHandler }) => {
+    console.log('en counter recibo initialCount = ' + initialCount);
+     const [qty, setQty] = useState(initialCount);
+    console.log('en counter tengo qty = ' + qty);
+     
+   const increment = () => {
+        if (qty < stock) {
+            setQty(qty + 1)
         }
     }
 
     const decrement = () => {
-        if (count > 0) {
-            setCount(count - 1)
+        if (qty > 0) {
+            setQty(qty - 1)
         }
     }
 
@@ -25,13 +26,13 @@ const Counter = ({stock, onAddHandler }) => {
                     <button className="btn btn-light" onClick={decrement}>-</button>
                 </div>
                 <div className="col-2">
-                    <span class="badge bg-secondary">{count}</span>
+                    <span class="badge bg-secondary">{qty}</span>
                 </div>
                 <div className="col-2">
                     <button className="btn btn-light" onClick={increment}>+</button>
                 </div>
             </div>
-            <button className="btn btn-dark" onClick={() => onAddHandler(count)}>Add to Cart</button>
+            <button className="btn btn-dark" onClick={() => onAddHandler(qty)}>Add to Cart</button>
 
         </div>
         );

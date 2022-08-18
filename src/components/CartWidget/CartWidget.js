@@ -1,4 +1,3 @@
-import React from 'react';
 import './CartWidget.css';
 import { useContext } from 'react';
 import { CartInfoContext } from '../../context/CartInfoContext';
