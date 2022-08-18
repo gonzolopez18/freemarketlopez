@@ -1,4 +1,4 @@
-import { createContext , useState } from "react";
+import { createContext , useState } from 'react';
 
 export const CartInfoContext = createContext();
 
@@ -6,17 +6,17 @@ export const CartInfoContextProvider = ( {children }) => {
     const [cartInfo, setCartInfo] = useState([]);
   
     const addToCartInfo = (product) => { 
-      console.log(product.id);
-      if (isInCartInfo(product.id)) 
-        return;      
-      setCartInfo([...cartInfo, product]);
-      console.log(cartInfo)
+      if (isInCartInfo(product.id)) {
+        const newCartInfo = cartInfo.filter(prod => prod.id !== product.id);
+        setCartInfo([...newCartInfo, product]);
+      } else {
+        setCartInfo([...cartInfo, product]);
+      }
     }
   
     const isInCartInfo = (productId) => {
       const itIs = cartInfo.some( prod => prod.id === productId);
-      console.log(itIs);
-        return itIs
+      return itIs
     }
 
     const getCartInfoCount = () => {
@@ -26,10 +26,22 @@ export const CartInfoContextProvider = ( {children }) => {
       )
       return count;
     }
-  
+
+    const removeFromCartInfo = (productId) => {
+      const newCartInfo = cartInfo.filter(prod => prod.id !== productId);
+      setCartInfo(newCartInfo);
+      
+    }
+
+    const clearCartInfo = () => { setCartInfo([]); }
+
+    const getProductQuantity = (productId) => {
+      const product = cartInfo.find(prod => prod.id === productId);
+      return product?.qty;
+    }
 
     return (
-        <CartInfoContext.Provider value={{ cartInfo, addToCartInfo, getCartInfoCount}}> 
+        <CartInfoContext.Provider value={{ cartInfo, addToCartInfo, getCartInfoCount, removeFromCartInfo, clearCartInfo, getProductQuantity}}> 
             {children}
          </CartInfoContext.Provider>
     )

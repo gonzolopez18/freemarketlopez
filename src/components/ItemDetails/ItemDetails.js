@@ -4,19 +4,21 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartInfoContext } from '../../context/CartInfoContext';
 
-const ItemDetails = ( {product, stock }) => {
+const ItemDetails = ( {id, name, description, price, img, stock }) => {
     const [quantity, setQuantity ] = useState(0);
-    const {id, name, description, price, img} = product;
 
-    const { addToCartInfo } = useContext( CartInfoContext);
+    const { addToCartInfo, getProductQuantity } = useContext( CartInfoContext);
 
 
     const handleOnAdd = (qty) => {
         setQuantity(qty);
-        const productToAdd = { ...product, qty};
+        const productToAdd = { id, name, price, qty};
         addToCartInfo(productToAdd);
     }
     
+    const productQuantity = getProductQuantity(id);
+    console.log( 'desde itemDetails envio:' + productQuantity);
+
     return (
         <div className="container  pt-5">
             <div className="row">
@@ -40,7 +42,7 @@ const ItemDetails = ( {product, stock }) => {
                         </div>
                         <h3 className="text-center m-5">${price}</h3>
                         {quantity === 0 ? (
-                                <Counter stock={ stock } onAddHandler={handleOnAdd}></Counter>
+                                <Counter stock={ stock } onAddHandler={handleOnAdd} initialCount={ productQuantity } />
                             ) : (
                                 <Link to='/cart'>Finalizar combra</Link>
                             ) 

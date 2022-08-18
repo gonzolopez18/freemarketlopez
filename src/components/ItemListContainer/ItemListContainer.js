@@ -7,7 +7,6 @@ import { useParams } from 'react-router-dom';
 
 const ItemListContainer = ( {message}) => {
     const [catalog, setCatalog] = useState([]);
-
     const { category } = useParams();
 
     useEffect(() => {
