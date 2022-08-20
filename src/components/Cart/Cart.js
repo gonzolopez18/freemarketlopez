@@ -6,12 +6,16 @@ import ItemDetails from '../ItemDetails/ItemDetails';
 import { Link } from 'react-router-dom';
 
 const Cart = () => {
-    const {cartInfo, getTotalAmount, getCartInfoCount, removeFromCartInfo}  = useContext(CartInfoContext);
+    const {cartInfo, getTotalAmount, getCartInfoCount, removeFromCartInfo, clearCartInfo}  = useContext(CartInfoContext);
     const TotalAmount = getTotalAmount();
     const CartCount = getCartInfoCount();
 
     const removeItem = (id) => {
         removeFromCartInfo(id);
+    };
+
+    const clearAll = () => {
+        clearCartInfo();
     };
 
 
@@ -89,6 +93,7 @@ if (CartCount === 0) {
                             <div class="card-body p-4 ">
                                 <div class="row d-flex justify-content-between align-items-right">
                                     <div class="col-md-2 col-lg-2 col-xl-2">
+                                        <button onClick={() => clearCartInfo()}>Borrar todo</button>
                                     </div>
                                     <div class="col-md-3 col-lg-3 col-xl-3">
                                     </div>
