@@ -3,11 +3,9 @@ import { useState } from 'react';
 
 
 const Counter = ({stock = 0, initialCount = 1, onAddHandler }) => {
-    console.log('en counter recibo initialCount = ' + initialCount);
-     const [qty, setQty] = useState(initialCount);
-    console.log('en counter tengo qty = ' + qty);
+    const [qty, setQty] = useState(initialCount);
      
-   const increment = () => {
+    const increment = () => {
         if (qty < stock) {
             setQty(qty + 1)
         }

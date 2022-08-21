@@ -17,7 +17,6 @@ const ItemDetails = ( {id, name, description, price, img, stock }) => {
     }
     
     const productQuantity = getProductQuantity(id);
-    console.log( 'desde itemDetails envio:' + productQuantity);
 
     return (
         <div className="container  pt-5">

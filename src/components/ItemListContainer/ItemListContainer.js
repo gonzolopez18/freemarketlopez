@@ -1,18 +1,21 @@
 import { useState, useEffect} from 'react';
 import './ItemListContainer.css';
 import ItemList from '../../components/ItemList/ItemList';
-import { getCatalogFromApi, getCatalogFromApiByCategory } from '../../mockedApi';
+import { GetCatalogFromApi } from '../../services/productService';
 import { useParams } from 'react-router-dom';
-
 
 const ItemListContainer = ( {message}) => {
     const [catalog, setCatalog] = useState([]);
     const { category } = useParams();
-
-    useEffect(() => {
-        const getCatalog = category ? getCatalogFromApiByCategory : getCatalogFromApi;
-        getCatalog(category).then((catalog) =>
-                setCatalog(catalog))
+    const [isLoading, setIsLoading] = useState(true);
+    
+    useEffect( () => {
+        const getCatalog = async () => {
+            const result = await GetCatalogFromApi(category);
+            setCatalog(result);
+        };
+        getCatalog();
+        setIsLoading(false);
         }
     , [category]);
 
@@ -22,8 +25,7 @@ const ItemListContainer = ( {message}) => {
                     <h1> {message}</h1>
                 </div>
                 
-                
-                <ItemList products={catalog} ></ItemList>
+            {isLoading ? <h1>Cargando...</h1> : <ItemList products={catalog} ></ItemList>}
          </div> 
        );
     }
