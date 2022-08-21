@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getCatalogFromApiById } from "../../mockedApi";
+import { GetCatalogFromApiById } from '../../services/productService';
 import ItemDetails from "../ItemDetails/ItemDetails";
 import { useParams } from 'react-router-dom';
 
@@ -9,12 +9,18 @@ const ItemDetailContainer = ( {message }) => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        getCatalogFromApiById(productId)
-            .then( producto => { 
-                setProduct(producto);
-            }).finally( () => {
-                setIsLoading(false);
-            });    
+        const getProduct = async () => {
+            const result = await GetCatalogFromApiById(productId);
+            setProduct(result);
+        };
+        getProduct();
+        setIsLoading(false);
+        // getCatalogFromApiById(productId)
+        //     .then( producto => { 
+        //         setProduct(producto);
+        //     }).finally( () => {
+        //         setIsLoading(false);
+        //     });    
     }, [productId]);
 
    return (
