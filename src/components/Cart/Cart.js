@@ -114,7 +114,7 @@ if (CartCount === 0) {
 
                         <div class="card">
                         <div class="card-body">
-                            <button type="button" class="btn btn-warning btn-block btn-lg">Proceed to Pay</button>
+                            <Link to="/checkout" type="button" class="btn btn-warning btn-block btn-lg">Proceed to Pay</Link>
                         </div>
                         </div>
 
