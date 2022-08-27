@@ -1,4 +1,3 @@
-import { hasSelectionSupport } from "@testing-library/user-event/dist/utils";
 import { collection, writeBatch , doc} from "firebase/firestore";
 import { backend } from "./firebase";
 import { getProductFromList } from "./productService";

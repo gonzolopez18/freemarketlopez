@@ -2,7 +2,6 @@ import React from 'react';
 import './Cart.css';
 import { useContext } from "react";
 import { CartInfoContext }  from "../../context/CartInfoContext";
-import ItemDetails from '../ItemDetails/ItemDetails';
 import { Link } from 'react-router-dom';
 
 const Cart = () => {
@@ -13,11 +12,6 @@ const Cart = () => {
     const removeItem = (id) => {
         removeFromCartInfo(id);
     };
-
-    const clearAll = () => {
-        clearCartInfo();
-    };
-
 
 if (CartCount === 0) {
     return (
