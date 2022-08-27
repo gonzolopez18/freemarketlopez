@@ -1,8 +1,9 @@
 
-import { getDocs, collection, query, where, doc, getDoc } from 'firebase/firestore'
+import { getDocs, collection, query, where, doc, getDoc, documentId } from 'firebase/firestore'
 import { backend } from './firebase'
 
 const collectionName = 'products';
+const collectionRef = collection(backend, collectionName);
 
 export const GetCatalogFromApi = async (category) => { 
     const collectionRef = !category ? 
@@ -21,4 +22,10 @@ export const GetCatalogFromApiById = async (id) => {
     const data = response.data();
     const product = {id: response.id, ...data};
     return product;
+}
+
+export const getProductFromList = async (ids) => { 
+    console.log(ids);
+    const products = await getDocs(query(collectionRef, where(documentId(), 'in', ids)));
+    return products.docs;
 }
