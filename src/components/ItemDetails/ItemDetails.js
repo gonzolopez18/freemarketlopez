@@ -16,8 +16,6 @@ const ItemDetails = ( {id, name, description, price, img, stock }) => {
         addToCartInfo(productToAdd);
     }
     
-    const productQuantity = getProductQuantity(id);
-    console.log(productQuantity);
     return (
         <div className="container  pt-5">
             <div className="row">

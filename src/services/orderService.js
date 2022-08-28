@@ -26,7 +26,6 @@ export const saveOrder = async (order) => {
         orderBatch.set(newOrder, order);
         orderBatch.commit();
 
-        console.log(newOrder);
         return newOrder.id;
     } else { 
         const errorMessage = "Hay productos fuera de stock: " + String(outOfStock);

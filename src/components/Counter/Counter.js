@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 
 const Counter = ({stock = 0, initialCount = 1, onAddHandler }) => {
     const [qty, setQty] = useState(initialCount);
-     console.log(initialCount);
      useEffect(() => {
         setQty(initialCount)
    }, [initialCount])
