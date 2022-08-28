@@ -25,7 +25,6 @@ export const GetCatalogFromApiById = async (id) => {
 }
 
 export const getProductFromList = async (ids) => { 
-    console.log(ids);
     const products = await getDocs(query(collectionRef, where(documentId(), 'in', ids)));
     return products.docs;
 }

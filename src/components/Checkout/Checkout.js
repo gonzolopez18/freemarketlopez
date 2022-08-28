@@ -13,7 +13,6 @@ const Checkout = () => {
     const [email, setEmail] = useState("");
     const [orderId, setOrderId] = useState("");
     const [outOfStock, setOutOfStock] = useState(false);
-    const [invalidData, setInvalidData] = useState(true);
 
     //const navigate = useNavigate()
     const order = { 
@@ -25,21 +24,15 @@ const Checkout = () => {
 
     const save = async () => { 
         try {
-            console.log(order);
             const result = await saveOrder(order);
             setOrderId(result)
-            console.log("El id de la orden es:" + result);
             clearCartInfo();
-             //setTimeout(() => {
-            //    navigate('/')
-            //}, 3000)
         }
         catch (error) {
             console.error(error);
             setOutOfStock(true);
         }
         finally {
-            console.log(order);
         }
         
     }

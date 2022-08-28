@@ -36,6 +36,7 @@ export const CartInfoContextProvider = ( {children }) => {
     const clearCartInfo = () => { setCartInfo([]); }
 
     const getProductQuantity = (productId) => {
+      console.log(productId);
       const product = cartInfo.find(prod => prod.id === productId);
       return product?.qty;
     }

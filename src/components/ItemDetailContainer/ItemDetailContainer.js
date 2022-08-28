@@ -15,12 +15,6 @@ const ItemDetailContainer = ( {message }) => {
         };
         getProduct();
         setIsLoading(false);
-        // getCatalogFromApiById(productId)
-        //     .then( producto => { 
-        //         setProduct(producto);
-        //     }).finally( () => {
-        //         setIsLoading(false);
-        //     });    
     }, [productId]);
 
    return (
