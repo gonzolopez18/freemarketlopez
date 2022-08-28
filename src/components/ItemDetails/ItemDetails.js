@@ -17,7 +17,7 @@ const ItemDetails = ( {id, name, description, price, img, stock }) => {
     }
     
     const productQuantity = getProductQuantity(id);
-
+    console.log(productQuantity);
     return (
         <div className="container  pt-5">
             <div className="row">
@@ -41,9 +41,9 @@ const ItemDetails = ( {id, name, description, price, img, stock }) => {
                         </div>
                         <h3 className="text-center m-5">${price}</h3>
                         {quantity === 0 ? (
-                                <Counter stock={ stock } onAddHandler={handleOnAdd} initialCount={ productQuantity } />
+                                <Counter stock={ stock } onAddHandler={handleOnAdd} initialCount={  getProductQuantity(id) } />
                             ) : (
-                                <Link to='/cart'>Finalizar combra</Link>
+                                <Link to='/cart'>Finalizar compra</Link>
                             ) 
                         }
                         

@@ -1,10 +1,14 @@
 import './Counter.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 const Counter = ({stock = 0, initialCount = 1, onAddHandler }) => {
     const [qty, setQty] = useState(initialCount);
-     
+     console.log(initialCount);
+     useEffect(() => {
+        setQty(initialCount)
+   }, [initialCount])
+
     const increment = () => {
         if (qty < stock) {
             setQty(qty + 1)
@@ -24,7 +28,7 @@ const Counter = ({stock = 0, initialCount = 1, onAddHandler }) => {
                     <button className="btn btn-light" onClick={decrement}>-</button>
                 </div>
                 <div className="col-2">
-                    <span class="badge bg-secondary">{qty}</span>
+                    <span className="badge bg-secondary">{qty}</span>
                 </div>
                 <div className="col-2">
                     <button className="btn btn-light" onClick={increment}>+</button>
