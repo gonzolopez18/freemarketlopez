@@ -7,13 +7,15 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { CartInfoContextProvider } from './context/CartInfoContext';
 import Cart from './components/Cart/Cart';
 import Checkout from './components/Checkout/Checkout';
+import Test1 from './components/test1/test1';
 
 
 function App() {
 
   return (
     <div className="App container">
-      <CartInfoContextProvider>
+      <Test1></Test1>
+      {/* <CartInfoContextProvider>
         <BrowserRouter>
           <NavBar />
           <Routes>
@@ -25,7 +27,7 @@ function App() {
             <Route path='*' element={<h1>Page not Found</h1>} />
           </Routes>  
         </BrowserRouter>
-      </CartInfoContextProvider>
+      </CartInfoContextProvider> */}
     </div>
   );
 }

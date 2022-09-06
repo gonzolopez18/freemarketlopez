@@ -13,7 +13,7 @@ const ItemDetailContainer = ( {message }) => {
             const result = await GetCatalogFromApiById(productId);
             setProduct(result);
         };
-        getProduct();
+        getProduct().catch(console.error);
         setIsLoading(false);
     }, [productId]);
 

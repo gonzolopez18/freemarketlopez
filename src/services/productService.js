@@ -14,7 +14,7 @@ export const GetCatalogFromApi = async (category) => {
                 const data = doc.data();
                 return {id: doc.id, ...data};
             });
-            return products;
+    return products;
 }
 
 export const GetCatalogFromApiById = async (id) => { 

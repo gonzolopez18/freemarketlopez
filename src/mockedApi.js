@@ -73,12 +73,24 @@ const catalog = [
     }
 ]
 
-export const getCatalogFromApi = () => {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(catalog)
-        }, 500)
+export const getCatalogFromApi = async () => {
+    var products
+    fetch('http://localhost:8080/api/gambling')
+    .then(response => response.json())
+    .then(json => {
+        products = json;
+        console.log(json);
+    }).catch(error => {
+        console.log(error)
+    }).finally(() => {
+        
     })
+    return products;
+    // return new Promise((resolve) => {
+    //     setTimeout(() => {
+    //         resolve(catalog)
+    //     }, 500)
+    // })
 }
 export const getCatalogFromApiById = (id) => {
     return new Promise((resolve) => {

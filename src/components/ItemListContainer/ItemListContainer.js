@@ -14,7 +14,7 @@ const ItemListContainer = ( {message}) => {
             const result = await GetCatalogFromApi(category);
             setCatalog(result);
         };
-        getCatalog();
+        getCatalog().catch(console.error);
         setIsLoading(false);
         }
     , [category]);
