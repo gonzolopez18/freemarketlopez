@@ -33,7 +33,7 @@ const Counter = ({stock = 0, initialCount = 1, onAddHandler }) => {
                     <button className="btn btn-light" onClick={increment}>+</button>
                 </div>
             </div>
-            <button className="btn btn-dark" onClick={() => onAddHandler(qty)}>Add to Cart</button>
+            <button className="btn btn-primary" onClick={() => onAddHandler(qty)}>Add to Cart</button>
 
         </div>
         );

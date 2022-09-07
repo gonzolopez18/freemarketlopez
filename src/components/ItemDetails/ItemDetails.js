@@ -41,7 +41,10 @@ const ItemDetails = ( {id, name, description, price, img, stock }) => {
                         {quantity === 0 ? (
                                 <Counter stock={ stock } onAddHandler={handleOnAdd} initialCount={  getProductQuantity(id) } />
                             ) : (
-                                <Link to='/cart'>Finalizar compra</Link>
+                               
+                                <div className="container-md counter">
+                                     <Link  className="btn btn-primary"  to='/cart'>Finalizar compra</Link>
+                                </div>
                             ) 
                         }
                         

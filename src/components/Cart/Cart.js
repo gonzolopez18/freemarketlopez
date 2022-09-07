@@ -75,7 +75,7 @@ if (CartCount === 0) {
                                                 <h5 className="mb-0">${item.qty * item.price}</h5>
                                             </div>
                                             <div className="col-md-1 col-lg-1 col-xl-1 text-end">
-                                                <button onClick={() => removeItem(item.id)}><img src='/images/trash.svg' alt='Shopping Cart' /></button>
+                                                <button className="btn btn-warning" onClick={() => removeItem(item.id)}><img src='/images/trash.svg' alt='Shopping Cart' /></button>
                                             </div>
                                         </div>
                                     </div>
@@ -87,7 +87,7 @@ if (CartCount === 0) {
                             <div className="card-body p-4 ">
                                 <div className="row d-flex justify-content-between align-items-right">
                                     <div className="col-md-2 col-lg-2 col-xl-2">
-                                        <button onClick={() => clearCartInfo()}>Borrar todo</button>
+                                        <button className="btn btn-warning" onClick={() => clearCartInfo()}>Borrar todo</button>
                                     </div>
                                     <div className="col-md-3 col-lg-3 col-xl-3">
                                     </div>
@@ -108,7 +108,7 @@ if (CartCount === 0) {
 
                         <div className="card">
                         <div className="card-body">
-                            <Link to="/checkout" type="button" className="btn btn-warning btn-block btn-lg">Proceed to Pay</Link>
+                            <Link to="/checkout" type="button" className="btn btn-primary btn-block btn-lg">Proceed to Pay</Link>
                         </div>
                         </div>
 

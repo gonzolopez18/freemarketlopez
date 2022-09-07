@@ -22,7 +22,8 @@ const Checkout = () => {
             creationDate: new Date()
     }
 
-    const save = async () => { 
+    const save = async (e) => { 
+        e.preventDefault()
         try {
             const result = await saveOrder(order);
             setOrderId(result)
@@ -97,28 +98,30 @@ const Checkout = () => {
                         </li>
                     </ul>
                 </div>
-                <div className="col-md-8 order-md-1">
-                    <h4 className="mb-3">Personal Data</h4>
-                        <div className="row">
-                            <div className="col-md-6 mb-3">
-                                <label htmlFor="firstName">First name</label>
-                                <input type="text" className="form-control" id="firstName" onChange={({ target }) => setName(target.value)}  placeholder="" required=""/>
-                                <div className="invalid-feedback"> Valid first name is required. </div>
+                <form onSubmit={save}>
+                    <div className="col-md-8 order-md-1">
+                        <h4 className="mb-3">Personal Data</h4>
+                            <div className="row">
+                                <div className="col-md-6 mb-3">
+                                    <label htmlFor="firstName">First name</label>
+                                    <input type="text" className="form-control" id="firstName" onChange={({ target }) => setName(target.value)}  placeholder="" required="required"/>
+                                    <div className="invalid-feedback"> Valid first name is required. </div>
+                                </div>
+                                <div className="col-md-6 mb-3">
+                                    <label htmlFor="lastName">Last name</label>
+                                    <input type="text" className="form-control" id="lastName" onChange={({ target }) => setSureName(target.value)} placeholder="" required="required"/>
+                                    <div className="invalid-feedback"> Valid last name is required. </div>
+                                </div>
                             </div>
-                            <div className="col-md-6 mb-3">
-                                <label htmlFor="lastName">Last name</label>
-                                <input type="text" className="form-control" id="lastName" onChange={({ target }) => setSureName(target.value)} placeholder="" required=""/>
-                                <div className="invalid-feedback"> Valid last name is required. </div>
+                            <div className="mb-3">
+                                <label htmlFor="email">Email</label>
+                                <input type="email" className="form-control" id="email" onChange={({ target }) => setEmail(target.value)} placeholder="you@example.com" required="required"/>
+                                <div className="invalid-feedback"> Please enter a valid email address for shipping updates. </div>
                             </div>
-                        </div>
-                        <div className="mb-3">
-                            <label htmlFor="email">Email</label>
-                            <input type="email" className="form-control" id="email" onChange={({ target }) => setEmail(target.value)} placeholder="you@example.com" required=""/>
-                            <div className="invalid-feedback"> Please enter a valid email address for shipping updates. </div>
-                        </div>
-                        <hr className="mb-4" />
-                        <button className="btn btn-primary btn-lg btn-block" onClick={() => save(order)} >Order Now!</button>
-                </div>
+                            <hr className="mb-4" />
+                            <input className="btn btn-primary btn-lg btn-block"  type="submit" value="Order Now!"/>
+                    </div>
+                </form>
             </div>
         </div>
         )
