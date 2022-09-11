@@ -2,24 +2,15 @@ import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/navbar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-<<<<<<< HEAD
-=======
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { CartInfoContextProvider } from './context/CartInfoContext';
 import Cart from './components/Cart/Cart';
 import Checkout from './components/Checkout/Checkout';
 
->>>>>>> develop
-
 function App() {
 
   return (
-<<<<<<< HEAD
-    <div className="App">
-      <NavBar />
-      <ItemListContainer message="Bienvenidos" />
-=======
     <div className="App container">
       <CartInfoContextProvider>
         <BrowserRouter>
@@ -34,7 +25,6 @@ function App() {
           </Routes>  
         </BrowserRouter>
       </CartInfoContextProvider>
->>>>>>> develop
     </div>
   );
 }
